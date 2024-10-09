@@ -5,13 +5,13 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Setting the font to Comic Sans MS */
+    background-color: #0000FF; /* Setting the background to blue */
+    color: #ffffff; /* Setting the text color to white for better contrast */
 }
 
 header {
-    background-color: #333;
+    background-color: #000033; /* A darker blue for the header */
     color: #fff;
     padding: 1rem;
     text-align: center;
@@ -37,7 +37,7 @@ main {
 }
 
 footer {
-    background-color: #333;
+    background-color: #000033; /* Matching the footer with the header */
     color: #fff;
     text-align: center;
     padding: 1rem;
@@ -53,4 +53,16 @@ form {
 
 form label, form input, form textarea, form button {
     margin-bottom: 10px;
+    color: #000; /* Black text inside form fields for readability */
+}
+
+button {
+    background-color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccc; /* Button hover effect */
 }
