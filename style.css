@@ -1,31 +1,57 @@
-/* Global styling for all pages */
+/* General Styles */
 body {
-    background-color: blue;
+    background-color: lightblue;
     color: black;
-    font-family: 'Comic Sans MS', sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #66b2ff;
+    padding: 20px;
     text-align: center;
 }
 
-/* Style for navigation */
+/* Navigation */
 nav ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
-    margin: 20px 0;
+    background-color: #333;
+    overflow: hidden;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    float: left;
 }
 
 nav ul li a {
-    color: white;
+    display: block;
+    padding: 14px 20px;
     text-decoration: none;
+    color: white;
+    text-align: center;
 }
 
-/* Form styling for Contact page */
-form {
-    margin-top: 20px;
+nav ul li a:hover {
+    background-color: #111;
+}
+
+/* Section */
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #66b2ff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
