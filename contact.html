@@ -39,5 +39,21 @@
         <p>&copy; 2024 Tomario's Website</p>
     </footer>
 
+    <!-- JavaScript for form validation goes here -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let message = document.getElementById('message').value;
+
+            if (name === '' || email === '' || message === '') {
+                alert('Please fill out all fields.');
+                event.preventDefault(); // Prevent the form from submitting
+            } else {
+                alert('Form submitted successfully!');
+            }
+        });
+    </script>
+    
 </body>
 </html>
