@@ -1,25 +1,18 @@
-* {
+/* Global styling for all pages */
+body {
+    background-color: blue;
+    color: black;
+    font-family: 'Comic Sans MS', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Setting the font to Comic Sans MS */
-    background-color: #0000FF; /* Setting the background to blue */
-    color: #ffffff; /* Setting the text color to white for better contrast */
-}
-
-header {
-    background-color: #000033; /* A darker blue for the header */
-    color: #fff;
-    padding: 1rem;
     text-align: center;
 }
 
+/* Style for navigation */
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 20px 0;
 }
 
 nav ul li {
@@ -28,41 +21,11 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
 
-main {
-    padding: 2rem;
-}
-
-footer {
-    background-color: #000033; /* Matching the footer with the header */
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
+/* Form styling for Contact page */
 form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label, form input, form textarea, form button {
-    margin-bottom: 10px;
-    color: #000; /* Black text inside form fields for readability */
-}
-
-button {
-    background-color: #ffffff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #ccc; /* Button hover effect */
+    margin-top: 20px;
 }
