@@ -1,7 +1,7 @@
 /* General Styles */
 body {
-    background-color: #f0f8ff;  /* Lighter, refreshing background */
-    color: #333;
+    background-color: #e4f0f7;  /* Light background for contrast with navy */
+    color: #2c3e50;  /* Darker text for readability */
     font-family: 'Comic Sans MS', cursive, sans-serif;
     margin: 0;
     padding: 0;
@@ -10,17 +10,17 @@ body {
 
 /* Header */
 header {
-    background-color: #ff9f00; /* Bright, playful header color */
+    background-color: #34495e;  /* Navy blue header */
     padding: 30px;
     text-align: center;
-    border-bottom: 5px solid #ff6600;
+    border-bottom: 5px solid #2c3e50;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: headerAnimation 1s ease-in-out;
+    animation: fadeIn 1s ease-out;
 }
 
-/* Header Animation */
-@keyframes headerAnimation {
-    0% { opacity: 0; transform: translateY(-20px); }
+/* Header Fade In Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-30px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
@@ -29,7 +29,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #ff6600; /* Playful and vibrant orange */
+    background-color: #2c3e50;  /* Dark navy background */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -53,7 +53,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #e65c00;  /* Slightly darker orange on hover */
+    background-color: #1abc9c;  /* Soft teal hover effect */
     transform: scale(1.1);
 }
 
@@ -64,22 +64,23 @@ section {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: sectionAnimation 1.5s ease-out;
+    animation: sectionSlideIn 1s ease-out;
 }
 
-@keyframes sectionAnimation {
-    0% { opacity: 0; transform: translateX(-20px); }
+/* Section Slide In Animation */
+@keyframes sectionSlideIn {
+    0% { opacity: 0; transform: translateX(-30px); }
     100% { opacity: 1; transform: translateX(0); }
 }
 
 section h2 {
-    color: #ff6600; /* Match with header color */
+    color: #34495e;  /* Match header color */
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
 section h3 {
-    color: #333;
+    color: #2c3e50;
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
@@ -97,32 +98,32 @@ form input, form textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: 2px solid #ff6600;
+    border: 2px solid #2c3e50;
     border-radius: 5px;
     font-size: 1.1rem;
     transition: all 0.3s ease;
 }
 
 form input[type="submit"] {
-    background-color: #ff6600;
+    background-color: #2c3e50;
     color: white;
     cursor: pointer;
 }
 
 form input[type="submit"]:hover {
-    background-color: #e65c00;
+    background-color: #1abc9c;
     transform: scale(1.05);
 }
 
 form input:focus, form textarea:focus {
-    border-color: #ff9f00;
+    border-color: #34495e;
     outline: none;
-    box-shadow: 0 0 10px rgba(255, 159, 0, 0.5);
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
 }
 
 /* Footer */
 footer {
-    background-color: #ff9f00;
+    background-color: #34495e;
     text-align: center;
     padding: 20px;
     position: fixed;
@@ -134,17 +135,17 @@ footer {
 
 /* Hover and Animation Effects */
 h1, h2, h3 {
-    animation: textGlow 1.5s ease-in-out infinite alternate;
+    animation: textFadeIn 1.5s ease-out forwards;
 }
 
-@keyframes textGlow {
-    0% { color: #ff6600; text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600; }
-    100% { color: #e65c00; text-shadow: 0 0 10px #e65c00, 0 0 20px #e65c00; }
+@keyframes textFadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 /* Button Hover Effects */
 button {
-    background-color: #ff6600;
+    background-color: #2c3e50;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -155,6 +156,6 @@ button {
 }
 
 button:hover {
-    background-color: #e65c00;
+    background-color: #1abc9c;
     transform: scale(1.1);
 }
