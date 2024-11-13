@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    background-color: #e6f0f9;  /* Light background to contrast with navy */
+    background-color: #e0f7fa;  /* Lighter blue background */
     color: #333;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     margin: 0;
@@ -10,24 +10,23 @@ body {
 
 /* Header */
 header {
-    background-color: #001f3d; /* Navy blue header */
+    background-color: #003366; /* Navy blue header color */
     padding: 30px;
     text-align: center;
-    border-bottom: 5px solid #003366; /* Slightly lighter navy */
+    border-bottom: 5px solid #001f33; /* Darker navy border */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: headerAnimation 1s ease-in-out;
+    animation: headerSlideDown 1s ease-in-out;
 }
 
-header h1 {
-    color: white;  /* White title letters */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Header Animation */
-@keyframes headerAnimation {
+/* Header Text Animation */
+@keyframes headerSlideDown {
     0% { opacity: 0; transform: translateY(-20px); }
     100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Title Text (h1, h2, h3) */
+h1, h2, h3 {
+    color: white;  /* White text for the title */
 }
 
 /* Navigation */
@@ -35,7 +34,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #003366;  /* Navy background for nav */
+    background-color: #003366; /* Navy blue background */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -59,7 +58,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #005cbf;  /* Lighter blue on hover */
+    background-color: #005080; /* Lighter navy on hover */
     transform: scale(1.1);
 }
 
@@ -70,16 +69,16 @@ section {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: sectionAnimation 1.5s ease-out;
+    animation: sectionFadeIn 1.5s ease-out;
 }
 
-@keyframes sectionAnimation {
+@keyframes sectionFadeIn {
     0% { opacity: 0; transform: translateX(-20px); }
     100% { opacity: 1; transform: translateX(0); }
 }
 
 section h2 {
-    color: #001f3d; /* Navy color for section headings */
+    color: #003366; /* Navy color for section titles */
     font-size: 2rem;
     margin-bottom: 10px;
 }
@@ -103,32 +102,32 @@ form input, form textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: 2px solid #003366;
+    border: 2px solid #003366; /* Navy border */
     border-radius: 5px;
     font-size: 1.1rem;
     transition: all 0.3s ease;
 }
 
 form input[type="submit"] {
-    background-color: #003366;
+    background-color: #003366; /* Navy blue button */
     color: white;
     cursor: pointer;
 }
 
 form input[type="submit"]:hover {
-    background-color: #005cbf; /* Lighten on hover */
+    background-color: #005080; /* Lighter navy on hover */
     transform: scale(1.05);
 }
 
 form input:focus, form textarea:focus {
-    border-color: #001f3d;
+    border-color: #001f33; /* Darker navy focus border */
     outline: none;
-    box-shadow: 0 0 10px rgba(0, 31, 61, 0.5);
+    box-shadow: 0 0 10px rgba(0, 31, 51, 0.5);
 }
 
 /* Footer */
 footer {
-    background-color: #001f3d;
+    background-color: #003366;
     text-align: center;
     padding: 20px;
     position: fixed;
@@ -141,12 +140,12 @@ footer {
 
 /* Hover and Animation Effects */
 h1, h2, h3 {
-    animation: textGlow 2s ease-in-out infinite alternate;
+    animation: textGlow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes textGlow {
-    0% { color: white; text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; }
-    100% { color: #005cbf; text-shadow: 0 0 10px #005cbf, 0 0 20px #005cbf; }
+    0% { color: #003366; text-shadow: 0 0 10px #003366, 0 0 20px #003366; }
+    100% { color: #005080; text-shadow: 0 0 10px #005080, 0 0 20px #005080; }
 }
 
 /* Button Hover Effects */
@@ -155,4 +154,13 @@ button {
     color: white;
     padding: 10px 20px;
     border: none;
-    border
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #005080;
+    transform: scale(1.1);
+}
