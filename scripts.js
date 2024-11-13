@@ -1,7 +1,14 @@
-// Toggle the visibility of the Nutrition Guide
-function toggleGuide() {
-    const guide = document.getElementById('nutrition-guide');
-    guide.style.display = guide.style.display === 'none' ? 'block' : 'none';
-}
+// Form validation for the Contact page
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
 
-// Form validation remains in contact.html script tag
+    // Check if all fields are filled out
+    if (name === '' || email === '' || message === '') {
+        alert('Please fill out all fields.');
+        event.preventDefault(); // Prevent the form from submitting if any field is empty
+    } else {
+        alert('Form submitted successfully!');
+    }
+});
