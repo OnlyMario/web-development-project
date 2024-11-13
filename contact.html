@@ -8,9 +8,8 @@
 </head>
 <body>
     <header>
-        <h1>Contact Tomario</h1>
+        <h1>Contact Tomario's Fitness Guide</h1>
     </header>
-    
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -18,9 +17,9 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-
     <section>
-        <h2>Contact Us</h2>
+        <h2>Get in Touch</h2>
+        <p>Have questions about fitness, nutrition, or how to get started? Send us a message, and we’ll be happy to help you on your journey!</p>
         <form id="contactForm" action="#" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -29,31 +28,27 @@
             <input type="email" id="email" name="email" required>
             <br><br>
             <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+            <textarea id="message" name="message" placeholder="Your question or message..." required></textarea>
             <br><br>
             <input type="submit" value="Submit">
         </form>
     </section>
-
     <footer>
-        <p>&copy; 2024 Tomario's Website</p>
+        <p>&copy; 2024 Tomario's Fitness Guide</p>
     </footer>
-
-    <!-- JavaScript for form validation goes here -->
+    <!-- JavaScript for form validation -->
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             let name = document.getElementById('name').value;
             let email = document.getElementById('email').value;
             let message = document.getElementById('message').value;
-
             if (name === '' || email === '' || message === '') {
                 alert('Please fill out all fields.');
-                event.preventDefault(); // Prevent the form from submitting
+                event.preventDefault();
             } else {
                 alert('Form submitted successfully!');
             }
         });
     </script>
-    
 </body>
 </html>
