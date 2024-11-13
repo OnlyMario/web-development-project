@@ -22,7 +22,6 @@ function playSuccessSound() {
 
 // Trigger confetti effect
 function triggerConfetti() {
-    // Simple confetti effect using a library (you can use your own)
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js';
     script.onload = function() {
