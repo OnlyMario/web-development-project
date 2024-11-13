@@ -10,7 +10,6 @@
     <header>
         <h1>Welcome to Tomario's Website</h1>
     </header>
-    
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -18,15 +17,26 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-
     <section>
-        <h2>Home</h2>
-        <p>This is a beginner's website. More content is coming soon, and the site is subject to change.</p>
-    </section>
+        <h2>Fitness Guide</h2>
+        <p>Welcome to your beginner's guide to fitness. Check out our tips on workouts, nutrition, and more!</p>
 
+        <!-- Toggle Nutrition Guide Button -->
+        <button onclick="toggleGuide()">Toggle Nutrition Guide</button>
+        <section id="nutrition-guide" style="display: none;">
+            <h3>Nutrition Guide</h3>
+            <ul>
+                <li>Lean Proteins: Chicken breast, turkey, tofu</li>
+                <li>Carbs: Brown rice, quinoa, oats</li>
+                <li>Healthy Fats: Avocado, nuts, olive oil</li>
+                <li>Fruits and Vegetables: Berries, spinach, broccoli</li>
+            </ul>
+        </section>
+    </section>
     <footer>
         <p>&copy; 2024 Tomario's Website</p>
     </footer>
 
+    <script src="scripts.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
