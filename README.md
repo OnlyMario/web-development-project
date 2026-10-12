@@ -2,7 +2,7 @@ BUILT BY T MUSCLE
 
 Mario Fitness was created to help people become stronger, healthier, and more confident in themselves. Whether you're just starting your fitness journey or have been working out for years, there's always room to grow.
 
-Our website features Push, Pull, and Leg Day workouts, along with cardio, abs, strength training, and weekly progression to help you challenge yourself.
+My website features Push, Pull, and Leg Day workouts, along with cardio, abs, strength training, and weekly progression to help you challenge yourself.
 
 Inspired by fitness, discipline, and anime, Mario Fitness brings together workouts and motivation to remind you that real progress starts with YOU.
 
