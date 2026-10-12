@@ -1,6 +1,13 @@
 
+// =====================================
+// MARIO FITNESS | BUILT BY T MUSCLE
+// =====================================
+
+// EXERCISE LIBRARY
+// Format: Name, Category, Muscle, Sets/Reps, Uses Weights
+
 const exercises = [
-  // PUSH — chest, shoulders, triceps
+  // PUSH DAY
   ["Bench Press", "push", "Chest", "3 × 6–10", true],
   ["Incline Dumbbell Press", "push", "Chest", "3 × 8–12", true],
   ["Incline Bench Press", "push", "Chest", "3 × 8–10", true],
@@ -12,7 +19,7 @@ const exercises = [
   ["Triceps Press", "push", "Triceps", "3 × 10–12", true],
   ["Rope Pushdown", "push", "Triceps", "3 × 10–15", true],
 
-  // PULL — back, biceps
+  // PULL DAY
   ["Single-Arm Row", "pull", "Back", "3 × 10", true],
   ["Lat Pulldown", "pull", "Back", "3 × 10", true],
   ["Seated Cable Row", "pull", "Back", "3 × 10", true],
@@ -23,7 +30,7 @@ const exercises = [
   ["21s Biceps Curls", "pull", "Biceps", "2–3 rounds", true],
   ["Biceps Curl", "pull", "Biceps", "3 × 15", true],
 
-  // LEGS
+  // LEG DAY
   ["Squat", "legs", "Quads / Glutes", "3 × 10", true],
   ["Romanian Deadlift", "legs", "Hamstrings", "3 × 10", true],
   ["Bulgarian Split Squat", "legs", "Legs", "3 × 10 / leg", true],
@@ -47,53 +54,122 @@ const exercises = [
 
   // CARDIO
   ["Outdoor Run", "cardio", "Endurance", "2–3 miles", false],
-  ["Treadmill Run", "cardio", "Endurance", "20–30 minutes", false]
+  ["Treadmill Run", "cardio", "Endurance", "20–30 min", false]
 ];
 
-const quotes = [
+// T MUSCLE'S ORIGINAL MOTIVATION
+
+const tMuscleQuotes = [
   "NEVER GIVE UP ON YOURSELF.",
 
   "THE ONLY PERSON WHO CAN HELP YOU AT THE END OF THE DAY IS YOU. PEOPLE CAN GUIDE YOU, BUT THEY CAN'T HOLD YOUR HAND AND DO IT FOR YOU. ALWAYS REMEMBER THAT.",
 
-  "WORK HARD. DON'T LET THE WEIGHTS BREAK YOU. BUT SOME DAYS THEY WILL WIN LOL.",
+  "WORK HARD. DON'T LET THE WEIGHTS BREAK YOU. BUT SOME DAYS THEY WILL WIN LOL 😂",
 
-  "THE ONLY PERSON WHO CAN DO THE WORK IS YOU. KEEP SHOWING UP."
+  "YOUR JOURNEY. YOUR WORK. YOUR RESULTS.",
+
+  "NOBODY CAN PUT IN THE REPS FOR YOU.",
+
+  "SOME DAYS YOU WIN. SOME DAYS THE WEIGHTS WIN. SHOW UP AGAIN ANYWAY.",
+
+  "STOP WAITING FOR MOTIVATION. BUILD DISCIPLINE.",
+
+  "YOU DON'T HAVE TO BE THE STRONGEST. JUST BE STRONGER THAN YESTERDAY."
 ];
 
-const weekMessages = {
-  1: "Week 1 — Foundation. Start with a weight you control.",
-  2: "Week 2 — Build. Add a little weight if your form is solid.",
-  3: "Week 3 — Push. Progress your reps or weight if ready.",
-  4: "Week 4 — Recover. Reduce the load and focus on form."
-};
+// ANIME-INSPIRED ORIGINAL QUOTES
+// Not actual dialogue from the shows
+
+const animeQuotes = [
+  {
+    series: "ONE PIECE",
+    character: "MONKEY D. LUFFY",
+    quote: "YOUR DREAM IS WORTH FIGHTING FOR. DON'T QUIT BECAUSE THE JOURNEY GETS HARD."
+  },
+  {
+    series: "ONE PIECE",
+    character: "RORONOA ZORO",
+    quote: "STRENGTH COMES FROM DISCIPLINE, SACRIFICE, AND NEVER STOPPING."
+  },
+  {
+    series: "ONE PIECE",
+    character: "SANJI",
+    quote: "REAL STRENGTH IS KNOWING WHAT YOU'RE FIGHTING FOR."
+  },
+  {
+    series: "NARUTO",
+    character: "ROCK LEE",
+    quote: "HARD WORK CAN TAKE YOU FURTHER THAN TALENT ALONE."
+  },
+  {
+    series: "NARUTO",
+    character: "NARUTO UZUMAKI",
+    quote: "DON'T LET YOUR BEGINNING DECIDE YOUR ENDING."
+  },
+  {
+    series: "NARUTO",
+    character: "MIGHT GUY",
+    quote: "KEEP TRAINING. YOUR EFFORT WILL BUILD YOUR FUTURE."
+  },
+  {
+    series: "DRAGON BALL",
+    character: "VEGETA",
+    quote: "BREAK THROUGH THE LIMITS YOU SET FOR YOURSELF."
+  },
+  {
+    series: "DRAGON BALL",
+    character: "GOKU",
+    quote: "THERE'S ALWAYS ANOTHER LEVEL TO REACH."
+  },
+  {
+    series: "BLACK CLOVER",
+    character: "ASTA",
+    quote: "NOT BEING STRONG ENOUGH TODAY ISN'T A REASON TO GIVE UP."
+  },
+  {
+    series: "ATTACK ON TITAN",
+    character: "EREN YEAGER",
+    quote: "KEEP MOVING FORWARD EVEN WHEN THE PATH IS DIFFICULT."
+  }
+];
+
+// =====================================
+// WORKOUT FILTERS AND PROGRESSION
+// =====================================
 
 let currentFilter = "all";
 let currentWeek = 1;
-let quoteIndex = 0;
 
 const grid = document.getElementById("exercise-grid");
 const dialog = document.getElementById("tutorial-dialog");
+
+const weekMessages = {
+  1: "Week 1 — Foundation. Start with a weight you control.",
+  2: "Week 2 — Build. Increase weight if your form is solid.",
+  3: "Week 3 — Push. Add reps or weight if you're ready.",
+  4: "Week 4 — Recover. Reduce the load and focus on form."
+};
 
 function progressionText(exercise) {
   const weighted = exercise[4];
 
   if (!weighted) {
-    return "Keep a steady pace and progress gradually.";
+    return "Focus on consistency and gradually improve.";
   }
 
   if (currentWeek === 1) {
-    return "Find your starting weight.";
+    return "Find a manageable starting weight.";
   }
 
   if (currentWeek === 2) {
-    return "If ready, add 2.5–5 lb upper body or 5–10 lb lower body.";
+    return "If ready: +2.5–5 lb upper body, +5–10 lb lower body.";
   }
 
   if (currentWeek === 3) {
-    return "Add reps or a small amount of weight if form stays solid.";
+    return "Add reps or a small weight increase with good form.";
   }
 
-  return "Recovery week: try 10–20% lighter.";
+  return "Recovery: consider 10–20% lighter weights.";
 }
 
 function renderExercises() {
@@ -129,6 +205,7 @@ function renderExercises() {
     const tutorial = document.createElement("button");
     tutorial.type = "button";
     tutorial.textContent = "WATCH TUTORIAL ↗";
+
     tutorial.addEventListener("click", () => {
       if (dialog && typeof dialog.showModal === "function") {
         dialog.showModal();
@@ -168,7 +245,8 @@ document.querySelectorAll(".split-card").forEach(button => {
       `.filter[data-filter="${button.dataset.day}"]`
     );
 
-    matchingFilter?.click();
+    if (matchingFilter) matchingFilter.click();
+
     document.getElementById("workouts").scrollIntoView({
       behavior: "smooth"
     });
@@ -177,31 +255,97 @@ document.querySelectorAll(".split-card").forEach(button => {
 
 document.getElementById("training-week").addEventListener("change", event => {
   currentWeek = Number(event.target.value);
+
   document.getElementById("week-description").textContent =
     weekMessages[currentWeek];
 
   renderExercises();
 });
 
-// MOTIVATIONAL QUOTES
+// =====================================
+// T MUSCLE SAYS — RANDOM QUOTES
+// =====================================
+
+const dailyQuoteElement = document.getElementById("daily-quote");
+let lastMotivationIndex = -1;
+
+function generateMotivation() {
+  let nextIndex;
+
+  do {
+    nextIndex = Math.floor(Math.random() * tMuscleQuotes.length);
+  } while (
+    nextIndex === lastMotivationIndex &&
+    tMuscleQuotes.length > 1
+  );
+
+  lastMotivationIndex = nextIndex;
+  dailyQuoteElement.textContent = tMuscleQuotes[nextIndex];
+}
+
+document.getElementById("new-motivation").addEventListener(
+  "click",
+  generateMotivation
+);
+
+// =====================================
+// ANIME MOTIVATION CAROUSEL
+// =====================================
+
+let animeIndex = 0;
+
+function showAnimeQuote() {
+  const anime = animeQuotes[animeIndex];
+
+  document.getElementById("anime-series").textContent = anime.series;
+  document.getElementById("anime-character").textContent =
+    "INSPIRED BY " + anime.character;
+
+  document.getElementById("anime-quote").textContent = anime.quote;
+
+  document.getElementById("anime-count").textContent =
+    `${String(animeIndex + 1).padStart(2, "0")} / ${String(animeQuotes.length).padStart(2, "0")}`;
+}
+
+document.getElementById("next-anime").addEventListener("click", () => {
+  animeIndex = (animeIndex + 1) % animeQuotes.length;
+  showAnimeQuote();
+});
+
+document.getElementById("prev-anime").addEventListener("click", () => {
+  animeIndex = (animeIndex - 1 + animeQuotes.length) % animeQuotes.length;
+  showAnimeQuote();
+});
+
+// =====================================
+// T MUSCLE MINDSET CAROUSEL
+// =====================================
+
+let quoteIndex = 0;
 
 function showQuote() {
-  document.getElementById("quote-text").textContent = quotes[quoteIndex];
+  document.getElementById("quote-text").textContent =
+    tMuscleQuotes[quoteIndex];
+
   document.getElementById("quote-count").textContent =
-    `${String(quoteIndex + 1).padStart(2, "0")} / ${String(quotes.length).padStart(2, "0")}`;
+    `${String(quoteIndex + 1).padStart(2, "0")} / ${String(tMuscleQuotes.length).padStart(2, "0")}`;
 }
 
 document.getElementById("next-quote").addEventListener("click", () => {
-  quoteIndex = (quoteIndex + 1) % quotes.length;
+  quoteIndex = (quoteIndex + 1) % tMuscleQuotes.length;
   showQuote();
 });
 
 document.getElementById("prev-quote").addEventListener("click", () => {
-  quoteIndex = (quoteIndex - 1 + quotes.length) % quotes.length;
+  quoteIndex =
+    (quoteIndex - 1 + tMuscleQuotes.length) % tMuscleQuotes.length;
+
   showQuote();
 });
 
+// =====================================
 // WORKOUT TRACKER
+// =====================================
 
 const storageKey = "mario-fitness-workouts";
 
@@ -237,7 +381,7 @@ function renderLog() {
     name.textContent = workout.name;
 
     const date = document.createElement("small");
-    date.textContent = ` — ${workout.date}`;
+    date.textContent = " — " + workout.date;
 
     details.append(name, date);
 
@@ -258,8 +402,12 @@ document.getElementById("workout-form").addEventListener("submit", event => {
   const reps = Number(document.getElementById("reps").value);
   const weight = Number(document.getElementById("weight").value);
 
-  if (!name || !Number.isInteger(sets) || !Number.isInteger(reps) ||
-      sets < 1 || reps < 1 || !Number.isFinite(weight) || weight < 0) {
+  if (
+    !name ||
+    !Number.isInteger(sets) || sets < 1 || sets > 50 ||
+    !Number.isInteger(reps) || reps < 1 || reps > 200 ||
+    !Number.isFinite(weight) || weight < 0 || weight > 2000
+  ) {
     return;
   }
 
@@ -276,7 +424,7 @@ document.getElementById("workout-form").addEventListener("submit", event => {
   try {
     localStorage.setItem(storageKey, JSON.stringify(workouts));
   } catch {
-    alert("Browser storage is unavailable. Your workout may not be saved.");
+    alert("Browser storage unavailable. Your workout may not be saved.");
   }
 
   renderLog();
@@ -284,18 +432,22 @@ document.getElementById("workout-form").addEventListener("submit", event => {
 });
 
 document.getElementById("clear-log").addEventListener("click", () => {
-  if (!confirm("Clear your workout history?")) return;
+  if (!confirm("Clear your entire workout history?")) return;
 
   workouts = [];
+
   try {
     localStorage.removeItem(storageKey);
   } catch {
-    // Storage may be unavailable.
+    // Browser storage may be disabled.
   }
+
   renderLog();
 });
 
-// TUTORIAL MODAL
+// =====================================
+// TUTORIAL PLACEHOLDER
+// =====================================
 
 document.getElementById("close-dialog").addEventListener("click", () => {
   dialog.close();
@@ -305,7 +457,9 @@ document.getElementById("dialog-ok").addEventListener("click", () => {
   dialog.close();
 });
 
+// =====================================
 // MOBILE NAVIGATION
+// =====================================
 
 const menuButton = document.getElementById("menu-btn");
 const navigation = document.getElementById("navigation");
@@ -322,9 +476,14 @@ navigation.querySelectorAll("a").forEach(link => {
   });
 });
 
-// INITIALIZE
+// =====================================
+// START THE WEBSITE
+// =====================================
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
 renderExercises();
 renderLog();
+generateMotivation();
+showAnimeQuote();
 showQuote();
