@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#070c18">
-  <meta name="description" content="Mario Fitness — Built By T Muscle. Push, pull, legs, cardio, and strength training.">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="Mario Fitness — Built By T Muscle. Push, pull, legs, cardio, strength, and motivation.">
   <title>Mario Fitness | Built By T Muscle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="scripts.js" defer></script>
 </head>
@@ -17,16 +17,17 @@
   <header class="navbar">
     <a href="#home" class="logo">MARIO <span>FITNESS</span></a>
     <button id="menu-btn" class="menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <nav id="navigation">
+    <nav id="navigation" aria-label="Main navigation">
       <a href="#home">HOME</a>
       <a href="#split">PROGRAMS</a>
       <a href="#workouts">WORKOUTS</a>
-      <a href="#progress">PROGRESS</a>
+      <a href="#progress">TRACKER</a>
       <a href="#motivation">MOTIVATION</a>
     </nav>
   </header>
 
   <main>
+    <!-- HERO -->
     <section id="home" class="hero">
       <div class="hero-content">
         <p class="eyebrow">BUILT BY T MUSCLE PRESENTS</p>
@@ -39,25 +40,46 @@
       </div>
     </section>
 
-    <div class="ticker" aria-label="Fitness motivation">
+    <!-- T MUSCLE SAYS -->
+    <section class="t-muscle-says" aria-labelledby="t-muscle-title">
+      <div class="t-muscle-inner">
+        <p class="eyebrow">DAILY MOTIVATION</p>
+        <h2 id="t-muscle-title">T MUSCLE <span>SAYS.</span></h2>
+        <div class="daily-quote-card">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote id="daily-quote" aria-live="polite">
+            NEVER GIVE UP ON YOURSELF.
+          </blockquote>
+          <div class="quote-bottom">
+            <span>— T MUSCLE 💪</span>
+            <button id="new-motivation" class="small-btn" type="button">
+              NEW MOTIVATION ↻
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker">
       <span>DISCIPLINE OVER MOTIVATION</span>
-      <span>•</span>
+      <span>✦</span>
       <span>BUILT BY T MUSCLE</span>
-      <span>•</span>
+      <span>✦</span>
       <span>ONE MORE REP</span>
-      <span>•</span>
+      <span>✦</span>
       <span>NEVER GIVE UP</span>
     </div>
 
+    <!-- TRAINING SPLIT -->
     <section id="split" class="section">
       <div class="section-heading">
         <p class="eyebrow">CHOOSE YOUR WORK</p>
         <h2>THE <span>SPLIT.</span></h2>
-        <p>Three days. Different muscles. One goal.</p>
+        <p>Push. Pull. Legs. Recover. Repeat.</p>
       </div>
 
       <div class="split-grid">
-        <button class="split-card push" data-day="push">
+        <button class="split-card push" data-day="push" type="button">
           <small>DAY 01</small>
           <div>
             <h3>PUSH DAY</h3>
@@ -65,8 +87,7 @@
             <strong>VIEW WORKOUTS ↗</strong>
           </div>
         </button>
-
-        <button class="split-card pull" data-day="pull">
+        <button class="split-card pull" data-day="pull" type="button">
           <small>DAY 02</small>
           <div>
             <h3>PULL DAY</h3>
@@ -74,8 +95,7 @@
             <strong>VIEW WORKOUTS ↗</strong>
           </div>
         </button>
-
-        <button class="split-card legs" data-day="legs">
+        <button class="split-card legs" data-day="legs" type="button">
           <small>DAY 03</small>
           <div>
             <h3>LEG DAY</h3>
@@ -84,20 +104,22 @@
           </div>
         </button>
       </div>
-      <p class="footnote">Train, recover, repeat. Beginners can start with three days a week.</p>
+      <p class="footnote">Start with 3 training days per week and allow time for recovery.</p>
     </section>
 
+    <!-- MINDSET BREAK -->
     <section class="quote-break">
-      <p class="eyebrow">A REMINDER FROM T MUSCLE</p>
+      <p class="eyebrow">REMEMBER THIS</p>
       <h2>THE ONLY PERSON WHO CAN DO THE WORK <span>IS YOU.</span></h2>
       <p>People can guide you. They can't do your reps for you.</p>
     </section>
 
+    <!-- EXERCISE LIBRARY -->
     <section id="workouts" class="section dark-section">
       <div class="section-heading">
         <p class="eyebrow">THE EXERCISE VAULT</p>
         <h2>PUT IN <span>WORK.</span></h2>
-        <p>Choose your muscle group.</p>
+        <p>Pick a muscle group. Get to it.</p>
       </div>
 
       <div class="filters" role="group" aria-label="Workout category">
@@ -112,10 +134,9 @@
       <div class="week-panel">
         <div>
           <strong>LEVEL UP EACH WEEK</strong>
-          <p id="week-description">Week 1 — Learn the movements.</p>
+          <p id="week-description">Week 1 — Foundation. Start with a weight you control.</p>
         </div>
-        <label for="training-week">
-          TRAINING WEEK
+        <label for="training-week">TRAINING WEEK
           <select id="training-week">
             <option value="1">WEEK 1</option>
             <option value="2">WEEK 2</option>
@@ -126,8 +147,10 @@
       </div>
 
       <div id="exercise-grid" class="exercise-grid"></div>
+      <p class="footnote">Exercise options, not a checklist to complete in one session. Pick a manageable number and focus on form.</p>
     </section>
 
+    <!-- WORKOUT TRACKER -->
     <section id="progress" class="section">
       <div class="section-heading">
         <p class="eyebrow">TRACK THE GRIND</p>
@@ -156,15 +179,40 @@
         <button id="clear-log" class="clear-btn" type="button">CLEAR ALL</button>
       </div>
       <div id="workout-log" class="workout-log"></div>
-      <p class="footnote">Your workouts are saved on this browser only.</p>
+      <p class="footnote">Workout logs are saved in this browser only. Clearing browser data may erase them.</p>
     </section>
 
+    <!-- ANIME MOTIVATION -->
+    <section id="anime" class="anime-section">
+      <div class="section-heading centered">
+        <p class="eyebrow">ANIME × FITNESS</p>
+        <h2>ANIME <span>MOTIVATION.</span></h2>
+        <p>Inspired by the characters who never quit.</p>
+      </div>
+
+      <div class="anime-card">
+        <div class="anime-top">
+          <span id="anime-series">ONE PIECE</span>
+          <span id="anime-count">01 / 10</span>
+        </div>
+        <div class="anime-symbol">“</div>
+        <blockquote id="anime-quote" aria-live="polite"></blockquote>
+        <p id="anime-character"></p>
+        <div class="anime-controls">
+          <button id="prev-anime" type="button" aria-label="Previous anime quote">← PREVIOUS</button>
+          <button id="next-anime" type="button">NEXT QUOTE →</button>
+        </div>
+      </div>
+      <p class="footnote centered">Original motivational wording inspired by anime characters, not direct dialogue.</p>
+    </section>
+
+    <!-- T MUSCLE MOTIVATION -->
     <section id="motivation" class="motivation">
       <p class="eyebrow">WORDS FROM T MUSCLE</p>
       <h2>THE <span>MINDSET.</span></h2>
       <div class="quote-card">
-        <span class="quote-symbol">“</span>
-        <blockquote id="quote-text" aria-live="polite">NEVER GIVE UP ON YOURSELF.</blockquote>
+        <span class="quote-symbol" aria-hidden="true">“</span>
+        <blockquote id="quote-text" aria-live="polite"></blockquote>
         <p id="quote-author">— T MUSCLE</p>
       </div>
       <div class="quote-controls">
@@ -174,6 +222,7 @@
       </div>
     </section>
 
+    <!-- FINAL CTA -->
     <section class="final-cta">
       <p class="eyebrow">MARIO FITNESS</p>
       <h2>YOUR JOURNEY.<br><span>YOUR WORK.</span></h2>
@@ -187,8 +236,9 @@
     <p>BUILT BY T MUSCLE © <span id="year"></span></p>
   </footer>
 
+  <!-- TUTORIAL PLACEHOLDER -->
   <dialog id="tutorial-dialog">
-    <button id="close-dialog" class="dialog-close" aria-label="Close">✕</button>
+    <button id="close-dialog" class="dialog-close" aria-label="Close tutorial message">✕</button>
     <p class="eyebrow">MARIO FITNESS</p>
     <h2>TUTORIALS <span>COMING SOON.</span></h2>
     <p>Exercise demonstration videos are on the way.</p>
