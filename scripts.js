@@ -381,7 +381,7 @@ function renderLog() {
     name.textContent = workout.name;
 
     const date = document.createElement("small");
-    date.textContent = " — " + workout.date;
+    date.textContent = " | " + workout.date;
 
     details.append(name, date);
 
