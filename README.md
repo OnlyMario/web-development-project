@@ -12,4 +12,4 @@ My message is simple:
 
 YOUR JOURNEY. YOUR WORK. YOUR RESULTS.
 
-- T Muscle 💙
+T Muscle 💙
