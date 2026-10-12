@@ -1,77 +1,198 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T-Muscle Fitness Guide - Home</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070c18">
+  <meta name="description" content="Mario Fitness — Built By T Muscle. Push, pull, legs, cardio, and strength training.">
+  <title>Mario Fitness | Built By T Muscle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to T-Muscle Fitness Guide</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+  <header class="navbar">
+    <a href="#home" class="logo">MARIO <span>FITNESS</span></a>
+    <button id="menu-btn" class="menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav id="navigation">
+      <a href="#home">HOME</a>
+      <a href="#split">PROGRAMS</a>
+      <a href="#workouts">WORKOUTS</a>
+      <a href="#progress">PROGRESS</a>
+      <a href="#motivation">MOTIVATION</a>
     </nav>
-    <section>
-        <h2>Beginner-Friendly Workouts</h2>
-        <ul>
-            <li>Bodyweight Squats - 3 sets of 15 reps</li>
-            <li>Push-ups - 3 sets of 10 reps</li>
-            <li>Plank - 3 sets of 30 seconds</li>
-            <li>Jumping Jacks - 3 sets of 20 reps</li>
-            <li>Walking Lunges - 3 sets of 10 reps per leg</li>
-            <li>Mountain Climbers - 3 sets of 30 seconds</li>
-        </ul>
+  </header>
 
-        <h2>Nutrition Guide</h2>
-        <h3>Lean Proteins</h3>
-        <ul>
-            <li>Chicken breast</li>
-            <li>Turkey</li>
-            <li>Lean beef</li>
-            <li>Fish (salmon, cod)</li>
-            <li>Egg whites</li>
-            <li>Tofu</li>
-        </ul>
-
-        <h3>Healthy Carbs</h3>
-        <ul>
-            <li>Brown rice</li>
-            <li>Quinoa</li>
-            <li>Sweet potatoes</li>
-            <li>Oats</li>
-            <li>Whole-grain bread</li>
-            <li>Beans and lentils</li>
-        </ul>
-
-        <h3>Healthy Fats</h3>
-        <ul>
-            <li>Avocado</li>
-            <li>Olive oil</li>
-            <li>Nuts (almonds, walnuts)</li>
-            <li>Chia seeds</li>
-            <li>Flaxseeds</li>
-            <li>Fatty fish (salmon, mackerel)</li>
-        </ul>
-
-        <h3>Fruits and Vegetables</h3>
-        <ul>
-            <li>Berries (blueberries, strawberries)</li>
-            <li>Leafy greens (spinach, kale)</li>
-            <li>Broccoli</li>
-            <li>Bell peppers</li>
-            <li>Carrots</li>
-            <li>Bananas</li>
-        </ul>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">BUILT BY T MUSCLE PRESENTS</p>
+        <h1>NEVER GIVE UP<br><span>ON YOURSELF.</span></h1>
+        <p class="hero-sub">NO EXCUSES. NO SHORTCUTS. JUST WORK.</p>
+        <div class="hero-actions">
+          <a href="#split" class="btn">START TRAINING ↗</a>
+          <a href="#motivation" class="btn btn-outline">GET MOTIVATED</a>
+        </div>
+      </div>
     </section>
-    <footer>
-        <p>&copy; 2024 T-Muscle Fitness Guide</p>
-    </footer>
-    <script src="scripts.js"></script>
+
+    <div class="ticker" aria-label="Fitness motivation">
+      <span>DISCIPLINE OVER MOTIVATION</span>
+      <span>•</span>
+      <span>BUILT BY T MUSCLE</span>
+      <span>•</span>
+      <span>ONE MORE REP</span>
+      <span>•</span>
+      <span>NEVER GIVE UP</span>
+    </div>
+
+    <section id="split" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">CHOOSE YOUR WORK</p>
+        <h2>THE <span>SPLIT.</span></h2>
+        <p>Three days. Different muscles. One goal.</p>
+      </div>
+
+      <div class="split-grid">
+        <button class="split-card push" data-day="push">
+          <small>DAY 01</small>
+          <div>
+            <h3>PUSH DAY</h3>
+            <p>CHEST / SHOULDERS / TRICEPS</p>
+            <strong>VIEW WORKOUTS ↗</strong>
+          </div>
+        </button>
+
+        <button class="split-card pull" data-day="pull">
+          <small>DAY 02</small>
+          <div>
+            <h3>PULL DAY</h3>
+            <p>BACK / BICEPS</p>
+            <strong>VIEW WORKOUTS ↗</strong>
+          </div>
+        </button>
+
+        <button class="split-card legs" data-day="legs">
+          <small>DAY 03</small>
+          <div>
+            <h3>LEG DAY</h3>
+            <p>QUADS / HAMSTRINGS / GLUTES</p>
+            <strong>VIEW WORKOUTS ↗</strong>
+          </div>
+        </button>
+      </div>
+      <p class="footnote">Train, recover, repeat. Beginners can start with three days a week.</p>
+    </section>
+
+    <section class="quote-break">
+      <p class="eyebrow">A REMINDER FROM T MUSCLE</p>
+      <h2>THE ONLY PERSON WHO CAN DO THE WORK <span>IS YOU.</span></h2>
+      <p>People can guide you. They can't do your reps for you.</p>
+    </section>
+
+    <section id="workouts" class="section dark-section">
+      <div class="section-heading">
+        <p class="eyebrow">THE EXERCISE VAULT</p>
+        <h2>PUT IN <span>WORK.</span></h2>
+        <p>Choose your muscle group.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Workout category">
+        <button class="filter active" data-filter="all" aria-pressed="true">ALL</button>
+        <button class="filter" data-filter="push" aria-pressed="false">PUSH</button>
+        <button class="filter" data-filter="pull" aria-pressed="false">PULL</button>
+        <button class="filter" data-filter="legs" aria-pressed="false">LEGS</button>
+        <button class="filter" data-filter="core" aria-pressed="false">ABS</button>
+        <button class="filter" data-filter="cardio" aria-pressed="false">CARDIO</button>
+      </div>
+
+      <div class="week-panel">
+        <div>
+          <strong>LEVEL UP EACH WEEK</strong>
+          <p id="week-description">Week 1 — Learn the movements.</p>
+        </div>
+        <label for="training-week">
+          TRAINING WEEK
+          <select id="training-week">
+            <option value="1">WEEK 1</option>
+            <option value="2">WEEK 2</option>
+            <option value="3">WEEK 3</option>
+            <option value="4">WEEK 4</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="exercise-grid" class="exercise-grid"></div>
+    </section>
+
+    <section id="progress" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">TRACK THE GRIND</p>
+        <h2>BEAT YOUR <span>LAST SET.</span></h2>
+        <p>Small improvements. Big results.</p>
+      </div>
+
+      <form id="workout-form" class="tracker">
+        <label>EXERCISE
+          <input id="exercise-name" maxlength="60" placeholder="Bench Press" required>
+        </label>
+        <label>SETS
+          <input id="sets" type="number" min="1" max="50" placeholder="3" required>
+        </label>
+        <label>REPS
+          <input id="reps" type="number" min="1" max="200" placeholder="10" required>
+        </label>
+        <label>WEIGHT (LB)
+          <input id="weight" type="number" min="0" max="2000" step="0.5" placeholder="135" required>
+        </label>
+        <button class="btn" type="submit">SAVE WORKOUT ↗</button>
+      </form>
+
+      <div class="log-title">
+        <h3>YOUR WORKOUT LOG</h3>
+        <button id="clear-log" class="clear-btn" type="button">CLEAR ALL</button>
+      </div>
+      <div id="workout-log" class="workout-log"></div>
+      <p class="footnote">Your workouts are saved on this browser only.</p>
+    </section>
+
+    <section id="motivation" class="motivation">
+      <p class="eyebrow">WORDS FROM T MUSCLE</p>
+      <h2>THE <span>MINDSET.</span></h2>
+      <div class="quote-card">
+        <span class="quote-symbol">“</span>
+        <blockquote id="quote-text" aria-live="polite">NEVER GIVE UP ON YOURSELF.</blockquote>
+        <p id="quote-author">— T MUSCLE</p>
+      </div>
+      <div class="quote-controls">
+        <button id="prev-quote" aria-label="Previous quote">←</button>
+        <span id="quote-count">01 / 04</span>
+        <button id="next-quote" aria-label="Next quote">→</button>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <p class="eyebrow">MARIO FITNESS</p>
+      <h2>YOUR JOURNEY.<br><span>YOUR WORK.</span></h2>
+      <p>Built By T Muscle. Made for the grind.</p>
+      <a href="#split" class="btn">LET'S GET TO WORK ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <strong>MARIO <span>FITNESS</span></strong>
+    <p>BUILT BY T MUSCLE © <span id="year"></span></p>
+  </footer>
+
+  <dialog id="tutorial-dialog">
+    <button id="close-dialog" class="dialog-close" aria-label="Close">✕</button>
+    <p class="eyebrow">MARIO FITNESS</p>
+    <h2>TUTORIALS <span>COMING SOON.</span></h2>
+    <p>Exercise demonstration videos are on the way.</p>
+    <button id="dialog-ok" class="btn">GOT IT</button>
+  </dialog>
 </body>
 </html>
